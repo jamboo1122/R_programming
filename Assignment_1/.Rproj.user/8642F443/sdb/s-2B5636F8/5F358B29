@@ -1,0 +1,17 @@
+{
+    "contents" : "corr <- function(directory, threshold = 0) {\n  \n  id = 1:332\n  result = c()\n  for (id_counter in id){\n    \n    cases <- complete(directory, id_counter)\n    if (cases$nobs[1] > threshold) {\n      filename <- paste(directory, \"/\", sprintf(\"%03d\", id_counter), \".csv\", sep=\"\")\n      data <- read.csv(file=filename,head=TRUE,sep=\",\")\n      data <- data[complete.cases(data),]\n      result <- c(result, cor(data$nitrate, data$sulfate))\n    }\n  }\n  return (result)\n  ## 'directory' is a character vector of length 1 indicating\n  ## the location of the CSV files\n  \n  ## 'threshold' is a numeric vector of length 1 indicating the\n  ## number of completely observed observations (on all\n  ## variables) required to compute the correlation between\n  ## nitrate and sulfate; the default is 0\n  \n  ## Return a numeric vector of correlations\n}",
+    "created" : 1420790799087.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2103645764",
+    "id" : "5F358B29",
+    "lastKnownWriteTime" : 1420792169,
+    "path" : "D:/Personal/R code/R_programming/Assignment_1/corr.R",
+    "project_path" : "corr.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

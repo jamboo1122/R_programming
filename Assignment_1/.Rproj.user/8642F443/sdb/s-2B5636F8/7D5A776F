@@ -1,0 +1,17 @@
+{
+    "contents" : "complete <- function(directory, id = 1:332) {\n  nobs = c()\n  for (id_counter in id){\n    filename <- paste(directory, \"/\", sprintf(\"%03d\", id_counter), \".csv\", sep=\"\")\n    data <- read.csv(file=filename,head=TRUE,sep=\",\")\n    nobs <- c(nobs, sum(complete.cases(data)))\n  }\n  df = data.frame(id, nobs)\n  return (df)\n  ## 'directory' is a character vector of length 1 indicating\n  ## the location of the CSV files\n  \n  ## 'id' is an integer vector indicating the monitor ID numbers\n  ## to be used\n  \n  ## Return a data frame of the form:\n  ## id nobs\n  ## 1  117\n  ## 2  1041\n  ## ...\n  ## where 'id' is the monitor ID number and 'nobs' is the\n  ## number of complete cases\n}",
+    "created" : 1420789544354.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3028676795",
+    "id" : "7D5A776F",
+    "lastKnownWriteTime" : 1420790050,
+    "path" : "D:/Personal/R code/R_programming/Assignment_1/complete.R",
+    "project_path" : "complete.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

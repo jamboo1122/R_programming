@@ -1,0 +1,16 @@
+{
+    "contents" : "pollutantmean <- function(directory, pollutant, id = 1:332) {\n  final = c()\n  for (id_counter in id){\n    filename <- paste(directory, \"/\", sprintf(\"%03d\", id_counter), \".csv\", sep=\"\")\n    data <- read.csv(file=filename,head=TRUE,sep=\",\")\n    final <- c(final, data[pollutant][!is.na(data[pollutant])])\n  }\n  return (round(mean(final), 3))\n  \n  \n  ## 'directory' is a character vector of length 1 indicating\n  ## the location of the CSV files\n  \n  ## 'pollutant' is a character vector of length 1 indicating\n  ## the name of the pollutant for which we will calculate the\n  ## mean; either \"sulfate\" or \"nitrate\".\n  \n  ## 'id' is an integer vector indicating the monitor ID numbers\n  ## to be used\n  \n  ## Return the mean of the pollutant across all monitors list\n  ## in the 'id' vector (ignoring NA values)\n  \n  \n}",
+    "created" : 1420775871393.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2555924315",
+    "id" : "DA2F3B0B",
+    "lastKnownWriteTime" : 1420791212,
+    "path" : "D:/Personal/R code/R_programming/Assignment_1/pollutantmean.R",
+    "project_path" : "pollutantmean.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
